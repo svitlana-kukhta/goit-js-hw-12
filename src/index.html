@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
 
-    <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
-    </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanilla App Template</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
 
-    <load src="./partials/footer.html" />
+<body>
 
-    <script type="module" src="./main.js"></script>
-  </body>
+    <div class="container">
+      <form class="search-request">
+        <input id="search-input" type="text" name="query" required placeholder="Search images..." />
+
+        <button class="btn" type="submit">Search</button>
+      </form>
+      <div class="gallery"></div>
+      <div class="loader-container"><span class="loader" style="display: none;">Loading images, please wait...</span></div>
+      <button class="load-more" style="display: none;">Load More</button>
+    </div>
+  
+  <script type="module" src="./main.js"></script>
+  <script type="module" src="./js/pixabay-api.js"></script>
+  <script type="module" src="./js/render-functions.js"></script>
+</body>
+
 </html>
+
