@@ -10,7 +10,7 @@ let currentPage = 1;
  * @param {number} perPage - кількість зображень на сторінку (за замовчуванням 15)
  * @returns {Promise} - обіцянка, що повертає дані з Pixabay
  */
-export async function fetchImages(searchQuery) {
+export async function fetchImages(searchQuery, page=1) {
   const searchParams = new URLSearchParams({
     key: API_KEY,
     q: searchQuery,
@@ -18,7 +18,7 @@ export async function fetchImages(searchQuery) {
     orientation: 'horizontal',
     safesearch: 'true',
     per_page: 15, 
-    page: currentPage, 
+    page: page, 
   });
 
   const url = `${ BASE_URL }?${ searchParams.toString()}`;
